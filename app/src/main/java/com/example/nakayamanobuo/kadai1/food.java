@@ -2,6 +2,7 @@ package com.example.nakayamanobuo.kadai1;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,13 +12,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
 
 public class food extends Activity {
+    final Calendar calendar = Calendar.getInstance();
+ // カレンダーから現在の '年' を取得
+    int mYear = calendar.get(Calendar.YEAR);
+  // カレンダーから現在の '月' を取得
+    int mMonth = calendar.get(Calendar.MONTH);
+   // カレンダーから現在の '日' を取得
+    int mDay = calendar.get(Calendar.DAY_OF_MONTH);
+    DatePickerDialog datePickerDialog;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +116,32 @@ public class food extends Activity {
                 alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                    }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 
@@ -175,6 +214,32 @@ public class food extends Activity {
 
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                            }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 
@@ -249,6 +314,32 @@ public class food extends Activity {
 
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                            }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 
@@ -323,6 +414,32 @@ public class food extends Activity {
 
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                            }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 
@@ -397,6 +514,32 @@ public class food extends Activity {
 
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                            }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 
@@ -471,6 +614,32 @@ public class food extends Activity {
 
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                            }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 
@@ -544,6 +713,32 @@ public class food extends Activity {
 
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                            }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 
@@ -618,6 +813,32 @@ public class food extends Activity {
 
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                            }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 
@@ -692,6 +913,32 @@ public class food extends Activity {
 
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                            }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 
@@ -766,6 +1013,32 @@ public class food extends Activity {
 
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                            }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 
@@ -840,6 +1113,32 @@ public class food extends Activity {
 
                 alert.setView(viw);
                 alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                mYear = year;
+                                mMonth = monthOfYear;
+                                mDay = dayOfMonth;
+                            }
+                        };
+
+                        datePickerDialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                mYear,
+                                mMonth,
+                                mDay
+                        );
+                        datePickerDialog.show();
+
+                    }
+
+                });
             }
         });
 

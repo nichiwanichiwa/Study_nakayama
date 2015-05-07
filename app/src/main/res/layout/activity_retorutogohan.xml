@@ -54,4 +54,12 @@
         android:layout_below="@+id/child"
         android:layout_alignParentStart="true" />
 
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/cal"
+        android:src="@drawable/cal"
+        android:layout_below="@+id/adult"
+        android:layout_alignEnd="@+id/textView12" />
+
 </RelativeLayout>
