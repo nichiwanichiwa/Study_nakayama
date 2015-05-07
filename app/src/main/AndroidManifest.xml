@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.nakayamanobuo.kadai1" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".setting"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name=".stock"
+            android:label="@string/title_activity_stock" >
+        </activity>
+        <activity
+            android:name=".food"
+            android:label="@string/title_activity_food" >
+        </activity>
+        <activity
+            android:name=".popup_1"
+            android:label="@string/title_activity_popup_1" >
+        </activity>
+        <activity
+            android:name=".popup_2"
+            android:label="@string/title_activity_popup_2" >
+        </activity>
+        <activity
+            android:name=".popup_3"
+            android:label="@string/title_activity_popup_3" >
+        </activity>
+        <activity
+            android:name=".popup_4"
+            android:label="@string/title_activity_popup_4" >
+        </activity>
+        <activity
+            android:name=".popup_5"
+            android:label="@string/title_activity_popup_5" >
+        </activity>
+        <activity
+            android:name=".popup_6"
+            android:label="@string/title_activity_popup_6" >
+        </activity>
+        <activity
+            android:name=".popup_7"
+            android:label="@string/title_activity_popup_7" >
+        </activity>
+        <activity
+            android:name=".popup_8"
+            android:label="@string/title_activity_popup_8" >
+        </activity>
+        <activity
+            android:name=".retorutogohan"
+            android:label="@string/title_activity_retorutogohan" >
+        </activity>
+        <activity
+            android:name=".kandume"
+            android:label="@string/title_activity_kandume" >
+        </activity>
+        <activity
+            android:name=".kanmen"
+            android:label="@string/title_activity_kanmen" >
+        </activity>
+        <activity
+            android:name=".kanpan"
+            android:label="@string/title_activity_kanpan" >
+        </activity>
+        <activity
+            android:name=".kandume_syusai"
+            android:label="@string/title_activity_kandume_syusai" >
+        </activity>
+        <activity
+            android:name=".retoruto"
+            android:label="@string/title_activity_retoruto" >
+        </activity>
+        <activity
+            android:name=".freaze"
+            android:label="@string/title_activity_freaze" >
+        </activity>
+        <activity
+            android:name=".mizu"
+            android:label="@string/title_activity_mizu" >
+        </activity>
+        <activity
+            android:name=".pokari"
+            android:label="@string/title_activity_pokari" >
+        </activity>
+        <activity
+            android:name=".karori"
+            android:label="@string/title_activity_karori" >
+        </activity>
+        <activity
+            android:name=".okasi"
+            android:label="@string/title_activity_okasi" >
+        </activity>
+    </application>
+
+</manifest>

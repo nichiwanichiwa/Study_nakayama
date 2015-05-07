@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">kadai1</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_setting">setting</string>
+    <string name="title_activity_stock">stock</string>
+    <string name="title_activity_food">food</string>
+    <string name="title_activity_popup_1">popup_1</string>
+    <string name="title_activity_popup_2">popup_2</string>
+    <string name="title_activity_popup_3">popup_3</string>
+    <string name="title_activity_popup_4">popup_4</string>
+    <string name="title_activity_popup_5">popup_5</string>
+    <string name="title_activity_popup_6">popup_6</string>
+    <string name="title_activity_popup_7">popup_7</string>
+    <string name="title_activity_popup_8">popup_8</string>
+    <string name="title_activity_retorutogohan">retorutogohan</string>
+    <string name="title_activity_kandume">kandume</string>
+    <string name="title_activity_kanmen">kanmen</string>
+    <string name="title_activity_kanpan">kanpan</string>
+    <string name="title_activity_kandume_syusai">kandume_syusai</string>
+    <string name="title_activity_retoruto">retoruto</string>
+    <string name="title_activity_freaze">freaze</string>
+    <string name="title_activity_mizu">mizu</string>
+    <string name="title_activity_pokari">pokari</string>
+    <string name="title_activity_karori">karori</string>
+    <string name="title_activity_okasi">okasi</string>
+</resources>

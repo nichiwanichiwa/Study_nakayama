@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.nakayamanobuo.kadai1.stock">
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gas"
+        android:src="@drawable/gas"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/matti"
+        android:src="@drawable/matti"
+        android:layout_alignTop="@+id/bombe"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bombe"
+        android:src="@drawable/bombe"
+        android:layout_above="@+id/hue"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hue"
+        android:src="@drawable/hue"
+        android:layout_below="@+id/gas"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sitagi"
+        android:src="@drawable/sitagi"
+
+        android:layout_below="@+id/matti"
+        android:layout_alignEnd="@+id/matti" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/thissyu"
+        android:src="@drawable/thissyu"
+        android:layout_below="@+id/matti"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/arumi"
+        android:src="@drawable/almi"
+        android:layout_below="@+id/hue"
+        android:layout_alignEnd="@+id/sitagi"
+        android:layout_marginEnd="50dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gunnte"
+        android:src="@drawable/gunnte"
+        android:layout_below="@+id/sitagi"
+        android:layout_alignEnd="@+id/thissyu"
+        android:layout_marginEnd="54dp" />
+
+    <ZoomButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zoomButton"
+        android:layout_alignTop="@+id/bombe"
+        android:layout_toStartOf="@+id/matti"
+        android:layout_marginTop="45dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ホーム"
+        android:id="@+id/homeButton"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/arumi" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="非常食"
+        android:id="@+id/foodButton"
+        android:layout_alignTop="@+id/homeButton"
+        android:layout_alignStart="@+id/arumi" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="備蓄品"
+        android:id="@+id/button4"
+        android:layout_alignTop="@+id/setting_Button"
+        android:layout_toStartOf="@+id/setting_Button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="設定"
+        android:id="@+id/setting_Button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/thissyu" />
+
+</RelativeLayout>
