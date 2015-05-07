@@ -2,6 +2,7 @@ package com.example.nakayamanobuo.kadai1;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -61,6 +62,17 @@ public class MainActivity extends Activity {
         //はいっちゃう
         et.setText(str);
         et2.setText(str2);
+
+        //期日が迫るとダイアログを表示する
+        SharedPreferences limit = getSharedPreferences("limit", MODE_PRIVATE);
+        int lim = limit.getInt("limit",0);
+        if(lim<=10){
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("期日到達"+lim+"日前です。");
+            alert.show();
+        }
 
         Button btnDisp = (Button)findViewById(R.id.set_button);
         btnDisp.setOnClickListener(new OnClickListener() {

@@ -204,7 +204,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="※2歳以上"
+        android:text="※2歳未満"
         android:id="@+id/textView18"
         android:layout_below="@+id/baby"
         android:layout_alignStart="@+id/baby" />
