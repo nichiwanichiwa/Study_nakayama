@@ -12,8 +12,7 @@
         android:id="@+id/imageView"
         android:src="@drawable/thissyu"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="97dp" />
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:inputType="number"
@@ -34,5 +33,26 @@
         android:id="@+id/textView12"
         android:layout_alignBottom="@+id/imageView"
         android:layout_toStartOf="@+id/imageView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/adult"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/child"
+        android:layout_above="@+id/textView12"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/baby"
+        android:layout_below="@+id/child"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

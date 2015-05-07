@@ -23,14 +23,19 @@ public class food extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
+        SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+        SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+        int a = adult.getInt("adult", 0);
 
         ImageButton btnretoruto = (ImageButton) findViewById(R.id.retoruto_gohan);
         btnretoruto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
                 //アラートダイアログの出力
                 AlertDialog.Builder alert;
                 alert = new AlertDialog.Builder(food.this);
                 alert.setTitle("レトルトごはん");
+
                 LayoutInflater inflater = LayoutInflater.from(food.this);
                 final View viw;
                 viw = inflater.inflate(R.layout.activity_retorutogohan, null);
@@ -46,6 +51,29 @@ public class food extends Activity {
 
                 //はいっちゃう
                 et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
 
 
 
@@ -101,6 +129,29 @@ public class food extends Activity {
                 //はいっちゃう
                 et.setText(str);
 
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -149,6 +200,29 @@ public class food extends Activity {
 
                 //はいっちゃう
                 et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
 
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -201,6 +275,29 @@ public class food extends Activity {
                 //はいっちゃう
                 et.setText(str);
 
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -251,6 +348,29 @@ public class food extends Activity {
 
                 //はいっちゃう
                 et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
 
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -303,6 +423,29 @@ public class food extends Activity {
                 //はいっちゃう
                 et.setText(str);
 
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -344,15 +487,34 @@ public class food extends Activity {
 
                 //プリファレンスの生成
                 SharedPreferences pref = getSharedPreferences("Preferences", MODE_PRIVATE);
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
                 int i = 0;
                 i = pref.getInt("freaze", i);
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+
                 String str = String.valueOf(i);
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
 
                 //必ずView変数で生成したデータを使うこと
                 EditText et = (EditText) viw.findViewById(R.id.freazeText);
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
 
                 //はいっちゃう
                 et.setText(str);
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
 
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -374,6 +536,9 @@ public class food extends Activity {
 
                     }
                 });
+
+
+
                 Calendar cal = Calendar.getInstance();
                 alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
 
@@ -404,6 +569,29 @@ public class food extends Activity {
 
                 //はいっちゃう
                 et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
 
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -456,6 +644,29 @@ public class food extends Activity {
                 //はいっちゃう
                 et.setText(str);
 
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -507,6 +718,29 @@ public class food extends Activity {
                 //はいっちゃう
                 et.setText(str);
 
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -557,6 +791,29 @@ public class food extends Activity {
 
                 //はいっちゃう
                 et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
 
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {

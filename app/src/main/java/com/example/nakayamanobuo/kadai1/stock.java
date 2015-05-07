@@ -56,6 +56,29 @@ public class stock extends Activity {
                 //はいっちゃう
                 et.setText(str);
 
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
 
                 gas_alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -104,6 +127,29 @@ public class stock extends Activity {
 
                 //はいっちゃう
                 et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
 
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -154,6 +200,29 @@ public class stock extends Activity {
                 //はいっちゃう
                 et.setText(str);
 
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -202,6 +271,29 @@ public class stock extends Activity {
 
                 //はいっちゃう
                 et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
 
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -252,6 +344,29 @@ public class stock extends Activity {
                 //はいっちゃう
                 et.setText(str);
 
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -300,6 +415,29 @@ public class stock extends Activity {
 
                 //はいっちゃう
                 et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
 
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -350,6 +488,29 @@ public class stock extends Activity {
                 //はいっちゃう
                 et.setText(str);
 
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -398,6 +559,29 @@ public class stock extends Activity {
 
                 //はいっちゃう
                 et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
 
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
