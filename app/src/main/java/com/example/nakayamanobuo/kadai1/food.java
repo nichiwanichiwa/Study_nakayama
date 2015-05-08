@@ -222,9 +222,12 @@ public class food extends Activity {
                     }
                 });
 
-                //今日の年月日の出力
-                Calendar cal = Calendar.getInstance();
-                alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
+                //プレファレンスの呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                rYear = cal.getInt("ryear",rYear);
+                rMonth = cal.getInt("rmonth",rMonth);
+                rDay = cal.getInt("rday",rDay);
+                alert.setMessage("賞味期限は"+rYear+"年"+(rMonth+1)+"月"+rDay+"日です。");
                 alert.setView(viw);
                 alert.show();
 
@@ -342,6 +345,12 @@ public class food extends Activity {
 
                     }
                 });
+                //プリファレンス呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                kYear = cal.getInt("kyear",kYear);
+                kMonth = cal.getInt("kmonth",kMonth);
+                kday = cal.getInt("kday",kday);
+                alert.setMessage("賞味期限は"+kYear+"年"+(kMonth+1)+"月"+kday+"日です。");
 
                 alert.setView(viw);
                 alert.show();
@@ -460,8 +469,12 @@ public class food extends Activity {
 
                     }
                 });
-                Calendar cal = Calendar.getInstance();
-                alert.setMessage("今日は"+kanYear+"年"+(kanMonth+1)+"月"+kanday+"日です。");
+                //プリファレンス呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                kanYear = cal.getInt("kanyear",kanYear);
+                kanMonth = cal.getInt("kanmonth",kanMonth);
+                kanday = cal.getInt("kanday",kanday);
+                alert.setMessage("賞味期限は"+kanYear+"年"+(kanMonth+1)+"月"+kanday+"日です。");
 
                 alert.setView(viw);
                 alert.show();
@@ -579,8 +592,12 @@ public class food extends Activity {
 
                     }
                 });
-                Calendar cal = Calendar.getInstance();
-                alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
+                //プリファレンス呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                kanpanYear = cal.getInt("kanpanyear",kanpanYear);
+                kanpanMonth = cal.getInt("kanpanmonth",kanpanMonth);
+                kanpanday = cal.getInt("kanpanday",kanpanday);
+                alert.setMessage("賞味期限は"+kanpanYear+"年"+(kanpanMonth+1)+"月"+kanpanday+"日です。");
 
                 alert.setView(viw);
                 alert.show();
@@ -589,6 +606,7 @@ public class food extends Activity {
                 btnCal.setOnClickListener(new View.OnClickListener(){
                     public  void onClick(View v) {
 
+                        //プリファレンス呼び出し
                         SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
                         kanpanYear = cal.getInt("kanpanyear",kanpanYear);
                         kanpanMonth = cal.getInt("kanpanmonth",kanpanMonth);
@@ -698,8 +716,12 @@ public class food extends Activity {
 
                     }
                 });
-                Calendar cal = Calendar.getInstance();
-                alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
+                //プリファレンス呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                r2Year = cal.getInt("r2year",r2Year);
+                r2Month = cal.getInt("r2month",r2Month);
+                r2Day = cal.getInt("r2day",r2Day);
+                alert.setMessage("賞味期限は"+r2Year+"年"+(r2Month+1)+"月"+r2Day+"日です。");
 
                 alert.setView(viw);
                 alert.show();
@@ -819,8 +841,12 @@ public class food extends Activity {
 
                     }
                 });
-                Calendar cal = Calendar.getInstance();
-                alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
+                //プリファレンス呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                r2Year = cal.getInt("r2year",r2Year);
+                r2Month = cal.getInt("r2month",r2Month);
+                r2Day = cal.getInt("r2day",r2Day);
+                alert.setMessage("賞味期限は"+r2Year+"年"+(r2Month+1)+"月"+r2Day+"日です。");
 
                 alert.setView(viw);
                 alert.show();
@@ -936,10 +962,12 @@ public class food extends Activity {
                     }
                 });
 
-
-
-                Calendar cal = Calendar.getInstance();
-                alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
+                //プリファレンス呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                fYear = cal.getInt("fyear",fYear);
+                fMonth = cal.getInt("fmonth",fMonth);
+                fDay = cal.getInt("fday",fDay);
+                alert.setMessage("賞味期限は"+fYear+"年"+(fMonth+1)+"月"+fDay+"日です。");
 
                 alert.setView(viw);
                 alert.show();
@@ -1058,8 +1086,13 @@ public class food extends Activity {
 
                     }
                 });
-                Calendar cal = Calendar.getInstance();
-                alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
+
+                //プリファレンス呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                wYear = cal.getInt("wyear",wYear);
+                wMonth = cal.getInt("wmonth",wMonth);
+                wDay = cal.getInt("wday",wDay);
+                alert.setMessage("賞味期限は"+wYear+"年"+(wMonth+1)+"月"+wDay+"日です。");
 
                 alert.setView(viw);
                 alert.show();
@@ -1069,7 +1102,6 @@ public class food extends Activity {
                     public  void onClick(View v) {
 
                         //プリファレンス呼び出し
-
                         SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
                         wYear = cal.getInt("wyear",wYear);
                         wMonth = cal.getInt("wmonth",wMonth);
@@ -1180,8 +1212,12 @@ public class food extends Activity {
 
                     }
                 });
-                Calendar cal = Calendar.getInstance();
-                alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
+                //プリファレンス呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                pYear = cal.getInt("pyear",pYear);
+                pMonth = cal.getInt("pmonth",pMonth);
+                pDay = cal.getInt("pday",pDay);
+                alert.setMessage("賞味期限は"+pYear+"年"+(pMonth+1)+"月"+pDay+"日です。");
 
                 alert.setView(viw);
                 alert.show();
@@ -1300,8 +1336,12 @@ public class food extends Activity {
 
                     }
                 });
-                Calendar cal = Calendar.getInstance();
-                alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
+                //プリファレンス呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                karoYear = cal.getInt("kalyear",karoYear);
+                karoMonth = cal.getInt("kalmonth",karoMonth);
+                karoDay = cal.getInt("kalday",karoDay);
+                alert.setMessage("賞味期限は"+karoYear+"年"+(karoMonth+1)+"月"+karoDay+"日です。");
 
                 alert.setView(viw);
                 alert.show();
@@ -1419,11 +1459,17 @@ public class food extends Activity {
 
                     }
                 });
-                Calendar cal = Calendar.getInstance();
-                alert.setMessage("今日は"+cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日です。");
+
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                okaYear = cal.getInt("okayear",okaYear);
+                okaMonth = cal.getInt("okamonth",okaMonth);
+                okaDay = cal.getInt("okaday",okaDay);
+
+                alert.setMessage("賞味期限は"+okaYear+"年"+(okaMonth+1)+"月"+okaDay+"日です。");
 
                 alert.setView(viw);
                 alert.show();
+
 
                 ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
                 btnCal.setOnClickListener(new View.OnClickListener(){
@@ -1457,7 +1503,6 @@ public class food extends Activity {
                                 okaday.commit();
                             }
                         };
-
                         okadatepickerdialog = new DatePickerDialog(
                                 food.this,
                                 listener,
@@ -1472,6 +1517,8 @@ public class food extends Activity {
                     }
 
                 });
+
+
             }
         });
 
