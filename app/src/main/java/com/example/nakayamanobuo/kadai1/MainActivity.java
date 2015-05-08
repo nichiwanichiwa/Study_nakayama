@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 import java.util.Calendar;
+import java.util.Date;
 
 
 public class MainActivity extends Activity {
@@ -24,8 +25,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         TextView tw = (TextView)findViewById(R.id.Days);
-        Calendar cal = Calendar.getInstance();
-        tw.setText(cal.get(Calendar.YEAR)+"年"+(cal.get(Calendar.MONTH)+1)+"月"+cal.get(Calendar.DATE)+"日");
+        Calendar cale = Calendar.getInstance();
+        tw.setText(cale.get(Calendar.YEAR)+"年"+(cale.get(Calendar.MONTH)+1)+"月"+cale.get(Calendar.DATE)+"日");
 
         SharedPreferences pref = getSharedPreferences("Preferences", MODE_PRIVATE);
         int g = pref.getInt("ga", 0);
@@ -63,16 +64,205 @@ public class MainActivity extends Activity {
         et.setText(str);
         et2.setText(str2);
 
-        //期日が迫るとダイアログを表示する
+        //レトルトごはんの期日が迫るとダイアログを表示する
+        Calendar today =Calendar.getInstance();
         SharedPreferences limit = getSharedPreferences("limit", MODE_PRIVATE);
+        SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
         int lim = limit.getInt("limit",0);
-        if(lim<=10){
+        int ry = cal.getInt("kyear", cale.get(Calendar.YEAR));
+        int rm = cal.getInt("rmonth",cale.get(Calendar.MONTH));
+        int rd = cal.getInt("rday", cale.get(Calendar.DATE));
+        Calendar calretltgohan = Calendar.getInstance();
+
+        switch(rm){
+            case 0:calretltgohan.set(ry,Calendar.JANUARY,rd,0,0,0);break;
+            case 1:calretltgohan.set(ry,Calendar.FEBRUARY,rd,0,0,0);break;
+            case 2:calretltgohan.set(ry,Calendar.MARCH,rd,0,0,0);break;
+            case 3:calretltgohan.set(ry,Calendar.APRIL,rd,0,0,0);break;
+            case 4:calretltgohan.set(ry,Calendar.MAY,rd,0,0,0);break;
+            case 5:calretltgohan.set(ry,Calendar.JUNE,rd,0,0,0);break;
+            case 6:calretltgohan.set(ry,Calendar.JULY,rd,0,0,0);break;
+            case 7:calretltgohan.set(ry,Calendar.AUGUST,rd,0,0,0);break;
+            case 8:calretltgohan.set(ry,Calendar.SEPTEMBER,rd,0,0,0);break;
+            case 9:calretltgohan.set(ry,Calendar.OCTOBER,rd,0,0,0);break;
+            case 10:calretltgohan.set(ry,Calendar.NOVEMBER,rd,0,0,0);break;
+            case 11:calretltgohan.set(ry,Calendar.DECEMBER,rd,0,0,0);break;
+            default:break;
+        }
+
+        long rdifference = calretltgohan.getTime().getTime() - today.getTime().getTime();
+        double ri = rdifference/1000/60/60/24;
+
+        if(lim>=ri&&ri > 0){
             AlertDialog.Builder alert;
             alert = new AlertDialog.Builder(MainActivity.this);
             alert.setTitle("警告");
-            alert.setMessage("期日到達"+lim+"日前です。");
+            alert.setMessage("レトルトごはんは賞味期限到達"+(ri+1)+"日前です。");
             alert.show();
         }
+        else if(ri<0){
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("レトルトごはんは賞味期限が過ぎています。");
+            alert.show();
+        }
+        else{
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("レトルトごはんは賞味期限当日です。");
+            alert.show();
+        }
+
+
+        //缶詰の期日が迫るとダイアログを表示する
+        ry = cal.getInt("kyear", cale.get(Calendar.YEAR));
+        rm = cal.getInt("kmonth",cale.get(Calendar.MONTH));
+        rd = cal.getInt("kday", cale.get(Calendar.DATE));
+        //Calendar calkan = Calendar.getInstance();
+        switch(rm){
+            case 0:calretltgohan.set(ry,Calendar.JANUARY,rd,0,0,0);break;
+            case 1:calretltgohan.set(ry,Calendar.FEBRUARY,rd,0,0,0);break;
+            case 2:calretltgohan.set(ry,Calendar.MARCH,rd,0,0,0);break;
+            case 3:calretltgohan.set(ry,Calendar.APRIL,rd,0,0,0);break;
+            case 4:calretltgohan.set(ry,Calendar.MAY,rd,0,0,0);break;
+            case 5:calretltgohan.set(ry,Calendar.JUNE,rd,0,0,0);break;
+            case 6:calretltgohan.set(ry,Calendar.JULY,rd,0,0,0);break;
+            case 7:calretltgohan.set(ry,Calendar.AUGUST,rd,0,0,0);break;
+            case 8:calretltgohan.set(ry,Calendar.SEPTEMBER,rd,0,0,0);break;
+            case 9:calretltgohan.set(ry,Calendar.OCTOBER,rd,0,0,0);break;
+            case 10:calretltgohan.set(ry,Calendar.NOVEMBER,rd,0,0,0);break;
+            case 11:calretltgohan.set(ry,Calendar.DECEMBER,rd,0,0,0);break;
+            default:break;
+        }
+
+
+
+        long kandifference = calretltgohan.getTime().getTime() - today.getTime().getTime();
+        double kani = kandifference/1000/60/60/24+1;
+
+
+        if(kani==1) {
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("缶詰（主食）は賞味期限当日です。");
+            alert.show();
+        }
+        else if(lim>=kani&&kani >= 1 && calretltgohan!=today){
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("缶詰（主食）は賞味期限到達"+(kani)+"日前です。");
+            alert.show();
+        }
+        else if(kani<0){
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("缶詰（主食）は賞味期限が過ぎています。");
+            alert.show();
+        }
+
+
+        //乾麺の期日が迫るとダイアログを表示する
+        ry = cal.getInt("kanyear", cale.get(Calendar.YEAR));
+        rm = cal.getInt("kanmonth",cale.get(Calendar.MONTH));
+        rd = cal.getInt("kanday", cale.get(Calendar.DATE));
+        //Calendar calkan = Calendar.getInstance();
+        switch(rm){
+            case 0:calretltgohan.set(ry,Calendar.JANUARY,rd,0,0,0);break;
+            case 1:calretltgohan.set(ry,Calendar.FEBRUARY,rd,0,0,0);break;
+            case 2:calretltgohan.set(ry,Calendar.MARCH,rd,0,0,0);break;
+            case 3:calretltgohan.set(ry,Calendar.APRIL,rd,0,0,0);break;
+            case 4:calretltgohan.set(ry,Calendar.MAY,rd,0,0,0);break;
+            case 5:calretltgohan.set(ry,Calendar.JUNE,rd,0,0,0);break;
+            case 6:calretltgohan.set(ry,Calendar.JULY,rd,0,0,0);break;
+            case 7:calretltgohan.set(ry,Calendar.AUGUST,rd,0,0,0);break;
+            case 8:calretltgohan.set(ry,Calendar.SEPTEMBER,rd,0,0,0);break;
+            case 9:calretltgohan.set(ry,Calendar.OCTOBER,rd,0,0,0);break;
+            case 10:calretltgohan.set(ry,Calendar.NOVEMBER,rd,0,0,0);break;
+            case 11:calretltgohan.set(ry,Calendar.DECEMBER,rd,0,0,0);break;
+            default:break;
+        }
+
+
+
+        long kanmendifference = calretltgohan.getTime().getTime() - today.getTime().getTime();
+        double kanmeni = kanmendifference/1000/60/60/24;
+
+        if(lim>=kanmeni&&kanmeni >0){
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("乾麺は賞味期限到達"+(kanmeni+1)+"日前です。");
+            alert.show();
+        }
+        else if(kanmeni<0){
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("乾麺は賞味期限が過ぎています。");
+            alert.show();
+        }
+        else{
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("乾麺は賞味期限当日です。");
+            alert.show();
+        }
+
+
+        //乾板の期日が迫るとダイアログを表示する
+        ry = cal.getInt("kanpanyear", cale.get(Calendar.YEAR));
+        rm = cal.getInt("kanpanmonth",cale.get(Calendar.MONTH));
+        rd = cal.getInt("kanpanday", cale.get(Calendar.DATE));
+        //Calendar calkan = Calendar.getInstance();
+        switch(rm){
+            case 0:calretltgohan.set(ry,Calendar.JANUARY,rd,0,0,0);break;
+            case 1:calretltgohan.set(ry,Calendar.FEBRUARY,rd,0,0,0);break;
+            case 2:calretltgohan.set(ry,Calendar.MARCH,rd,0,0,0);break;
+            case 3:calretltgohan.set(ry,Calendar.APRIL,rd,0,0,0);break;
+            case 4:calretltgohan.set(ry,Calendar.MAY,rd,0,0,0);break;
+            case 5:calretltgohan.set(ry,Calendar.JUNE,rd,0,0,0);break;
+            case 6:calretltgohan.set(ry,Calendar.JULY,rd,0,0,0);break;
+            case 7:calretltgohan.set(ry,Calendar.AUGUST,rd,0,0,0);break;
+            case 8:calretltgohan.set(ry,Calendar.SEPTEMBER,rd,0,0,0);break;
+            case 9:calretltgohan.set(ry,Calendar.OCTOBER,rd,0,0,0);break;
+            case 10:calretltgohan.set(ry,Calendar.NOVEMBER,rd,0,0,0);break;
+            case 11:calretltgohan.set(ry,Calendar.DECEMBER,rd,0,0,0);break;
+            default:break;
+        }
+
+
+
+        long difference = calretltgohan.getTime().getTime() - today.getTime().getTime();
+        double i = difference/1000/60/60/24;
+
+        if(lim>=i&&i >0){
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("乾麺は賞味期限到達"+(i+1)+"日前です。");
+            alert.show();
+        }
+        else if(i<0){
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("乾麺は賞味期限が過ぎています。");
+            alert.show();
+        }
+        else{
+            AlertDialog.Builder alert;
+            alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("警告");
+            alert.setMessage("乾パンは賞味期限当日です。");
+            alert.show();
+        }
+
 
         Button btnDisp = (Button)findViewById(R.id.set_button);
         btnDisp.setOnClickListener(new OnClickListener() {
