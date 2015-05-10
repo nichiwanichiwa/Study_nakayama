@@ -111,7 +111,7 @@ public class MainActivity extends Activity {
             AlertDialog.Builder alert;
             alert = new AlertDialog.Builder(MainActivity.this);
             alert.setTitle("警告");
-            alert.setMessage("レトルトごはんは賞味期限当日です。");
+            alert.setMessage("レトルトごはんは賞味期限当日です");
             alert.show();
         }
 
