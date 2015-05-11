@@ -207,6 +207,11 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.freazegohanText);
                         String str = et.getText().toString();
+
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
@@ -333,6 +338,11 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.kandumeText);
                         String str = et.getText().toString();
+
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
@@ -457,6 +467,11 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.kanmenText);
                         String str = et.getText().toString();
+
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
@@ -580,6 +595,11 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.kanpanText);
                         String str = et.getText().toString();
+
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
@@ -704,6 +724,11 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.kansyuText);
                         String str = et.getText().toString();
+
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
@@ -829,6 +854,9 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.retorutoText);
                         String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
@@ -949,6 +977,10 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.freazeText);
                         String str = et.getText().toString();
+
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
@@ -1074,6 +1106,9 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.mizuText);
                         String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
@@ -1200,6 +1235,11 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.pokariText);
                         String str = et.getText().toString();
+
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
@@ -1324,6 +1364,9 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.karoriText);
                         String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
@@ -1410,6 +1453,8 @@ public class food extends Activity {
                 i = pref.getInt("okasi", i);
                 String str = String.valueOf(i);
 
+
+
                 //必ずView変数で生成したデータを使うこと
                 EditText et = (EditText) viw.findViewById(R.id.okasiText);
 
@@ -1447,6 +1492,11 @@ public class food extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.okasiText);
                         String str = et.getText().toString();
+
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();

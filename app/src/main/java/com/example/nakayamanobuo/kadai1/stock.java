@@ -87,6 +87,11 @@ public class stock extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.gasText);
                         String str = et.getText().toString();
+
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+
                         int i = Integer.parseInt(str);
 
                         Editor e = prefs.edit();
@@ -159,6 +164,9 @@ public class stock extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.fireText);
                         String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         Editor e = prefs.edit();
@@ -231,6 +239,9 @@ public class stock extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.bombText);
                         String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         Editor e = prefs.edit();
@@ -303,6 +314,9 @@ public class stock extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.hueText);
                         String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         Editor e = prefs.edit();
@@ -375,6 +389,9 @@ public class stock extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.sitagiText);
                         String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         Editor e = prefs.edit();
@@ -447,6 +464,9 @@ public class stock extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.thissyuText);
                         String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         Editor e = prefs.edit();
@@ -519,6 +539,9 @@ public class stock extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.almiText);
                         String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         Editor e = prefs.edit();
@@ -591,6 +614,9 @@ public class stock extends Activity {
 
                         EditText et = (EditText) viw.findViewById(R.id.gunnteText);
                         String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
                         int i = Integer.parseInt(str);
 
                         Editor e = prefs.edit();

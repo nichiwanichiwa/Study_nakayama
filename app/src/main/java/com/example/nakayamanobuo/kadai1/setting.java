@@ -86,6 +86,25 @@ public class setting extends Activity {
                 String setting_str = setting_et.getText().toString();
                 String baby_str = baby_et.getText().toString();
 
+                if(adult_str.length() <= 0){
+                      adult_str = "0";
+                }
+                if(child_str.length() <= 0){
+                      child_str = "0";
+                }
+                if(limit_str.length() <= 0){
+                      limit_str = "0";
+                }
+                if(setting_str.length() <= 0){
+                      setting_str = "0";
+                }
+                if(baby_str.length() <= 0){
+                      baby_str = "0";
+                }
+
+
+
+
 
                 int a = Integer.parseInt(adult_str);
                 int c = Integer.parseInt(child_str);
@@ -153,6 +172,23 @@ public class setting extends Activity {
                 String setting_str = setting_et.getText().toString();
                 String baby_str = baby_et.getText().toString();
 
+                if(adult_str.length() <= 0){
+                    adult_str = "0";
+                }
+                if(child_str.length() <= 0){
+                    child_str = "0";
+                }
+                if(limit_str.length() <= 0){
+                    limit_str = "0";
+                }
+                if(setting_str.length() <= 0){
+                    setting_str = "0";
+                }
+                if(baby_str.length() <= 0){
+                    baby_str = "0";
+                }
+
+
 
                 int a = Integer.parseInt(adult_str);
                 int c = Integer.parseInt(child_str);
@@ -209,6 +245,23 @@ public class setting extends Activity {
                 String limit_str = limit_et.getText().toString();
                 String setting_str = setting_et.getText().toString();
                 String baby_str = baby_et.getText().toString();
+
+                if(adult_str.length() <= 0){
+                    adult_str = "0";
+                }
+                if(child_str.length() <= 0){
+                    child_str = "0";
+                }
+                if(limit_str.length() <= 0){
+                    limit_str = "0";
+                }
+                if(setting_str.length() <= 0){
+                    setting_str = "0";
+                }
+                if(baby_str.length() <= 0){
+                    baby_str = "0";
+                }
+
 
 
                 int a = Integer.parseInt(adult_str);

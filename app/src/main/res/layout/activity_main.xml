@@ -90,13 +90,31 @@
         android:layout_height="wrap_content"
         android:id="@+id/test"
         android:layout_alignBottom="@+id/space"
-        android:layout_toEndOf="@+id/space" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/test2"
         android:layout_alignTop="@+id/test"
-        android:layout_alignEnd="@+id/textView3" />
+        android:layout_alignEnd="@+id/set_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/stock_p"
+        android:layout_below="@+id/test"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/food_p"
+        android:layout_below="@+id/test2"
+        android:layout_alignEnd="@+id/test2" />
 
 </RelativeLayout>

@@ -53,16 +53,58 @@ public class MainActivity extends Activity {
 
         int sum = g + m + b + h + s + t + a + gun;
         int sum2= r + k + kan + kanpan + kan2 + reto + f + mizu + pokari + karori + okasi;
-        String str = String.valueOf(sum);
-        String str2 = String.valueOf(sum2);
+        String str = "備蓄品:"+String.valueOf(sum);
+        String str2 = "非常食:"+String.valueOf(sum2);
+
+        String str_sp;
+        switch(sum)
+        {
+            case 0 : str_sp = "備蓄は０％です。";break;
+            case 1 : str_sp = "備蓄は１０％です。";break;
+            case 2 : str_sp = "備蓄は２０％です。";break;
+            case 3 : str_sp = "備蓄は３０％です。";break;
+            case 4 : str_sp = "備蓄は４０％です。";break;
+            case 5 : str_sp = "備蓄は５０％です。";break;
+            case 6 : str_sp = "備蓄は６０％です。";break;
+            case 7 : str_sp = "備蓄は７０％です。";break;
+            case 8 : str_sp = "備蓄は８０％です。";break;
+            case 9 : str_sp = "備蓄は９０％です。";break;
+            case 10 : str_sp = "備蓄は１００％です。";break;
+            case 11 : str_sp = "備蓄は１１０％です。";break;
+            case 12 : str_sp = "備蓄は１２０％です。";break;
+            default: str_sp = "備蓄は１２０％以上です。";break;
+        }
+        String str_fp;
+        switch(sum2)
+        {
+            case 0 : str_fp = "備蓄は０％です。";break;
+            case 1 : str_fp = "備蓄は１０％です。";break;
+            case 2 : str_fp = "備蓄は２０％です。";break;
+            case 3 : str_fp = "備蓄は３０％です。";break;
+            case 4 : str_fp = "備蓄は４０％です。";break;
+            case 5 : str_fp = "備蓄は５０％です。";break;
+            case 6 : str_fp = "備蓄は６０％です。";break;
+            case 7 : str_fp = "備蓄は７０％です。";break;
+            case 8 : str_fp = "備蓄は８０％です。";break;
+            case 9 : str_fp = "備蓄は９０％です。";break;
+            case 10 : str_fp = "備蓄は１００％です。";break;
+            case 11 : str_fp = "備蓄は１１０％です。";break;
+            case 12 : str_fp = "備蓄は１２０％です。";break;
+            default: str_fp = "備蓄は１２０％以上です。";break;
+        }
+
 
         //必ずView変数で生成したデータを使うこと
         EditText et = (EditText) findViewById(R.id.test);
         EditText et2 = (EditText) findViewById(R.id.test2);
+        TextView et3 = (TextView) findViewById(R.id.stock_p);
+        TextView et4 = (TextView) findViewById(R.id.food_p);
 
         //はいっちゃう
         et.setText(str);
         et2.setText(str2);
+        et3.setText(str_sp);
+        et4.setText(str_fp);
 
         //レトルトごはんの期日が迫るとダイアログを表示する
         Calendar today =Calendar.getInstance();
@@ -140,21 +182,21 @@ public class MainActivity extends Activity {
 
 
         long kandifference = calretltgohan.getTime().getTime() - today.getTime().getTime();
-        double kani = kandifference/1000/60/60/24+1;
+        long kani = kandifference/1000/60/60/24;
 
 
-        if(kani==1) {
+        if(kani==0) {
             AlertDialog.Builder alert;
             alert = new AlertDialog.Builder(MainActivity.this);
             alert.setTitle("警告");
             alert.setMessage("缶詰（主食）は賞味期限当日です。");
             alert.show();
         }
-        else if(lim>=kani&&kani >= 1 && calretltgohan!=today){
+        else if(lim>=kani&&kani > 0 && calretltgohan!=today){
             AlertDialog.Builder alert;
             alert = new AlertDialog.Builder(MainActivity.this);
             alert.setTitle("警告");
-            alert.setMessage("缶詰（主食）は賞味期限到達"+(kani)+"日前です。");
+            alert.setMessage("缶詰（主食）は賞味期限到達"+(kani+1)+"日前です。");
             alert.show();
         }
         else if(kani<0){
