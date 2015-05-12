@@ -28,20 +28,13 @@ public class setting extends Activity {
         this.getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
 
-        // Spinnerの設定
+        // 設定のSpinnerの設定
         ArrayAdapter<CharSequence> adapter =
                 ArrayAdapter.createFromResource(this, R.array.sample_array,android.R.layout.simple_spinner_item);
 
-       /* ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
-        adapter.add("Sample0");
-        adapter.add("Sample1");
-        adapter.add("Sample2");
-        adapter.add("Sample3");
-        adapter.add("Sample4");*/
-
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        selectSpinner = (Spinner) findViewById(R.id.spinner_id);
+        selectSpinner = (Spinner)findViewById(R.id.spinner_id);
         selectSpinner.setAdapter(adapter);
         selectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -60,10 +53,10 @@ public class setting extends Activity {
                 setting_e.putInt("setting", asd);
                 setting_e.commit();
 
-                int s = setting.getInt("setting",1);
+               /* int s = setting.getInt("setting",3);
                 String setting_str = String.valueOf(s);
                 EditText setting_et = (EditText)findViewById(R.id.setting);
-                setting_et.setText(setting_str);
+                setting_et.setText(setting_str);*/
 
                // showToast(Integer.toString(spinner.getSelectedItemPosition()));
 
@@ -90,13 +83,13 @@ public class setting extends Activity {
         a = adult.getInt("adult", a);
         c = child.getInt("child",c);
         l = limit.getInt("limit", l);
-        s = setting.getInt("setting",s);
+        //s = setting.getInt("setting",s);
         b = baby.getInt("baby",b);
 
         String adult_str = String.valueOf(a);
         String child_str = String.valueOf(c);
         String limit_str = String.valueOf(l);
-        String setting_str = String.valueOf(s);
+        //String setting_str = String.valueOf(s);
         String baby_str = String.valueOf(b);
 
 
@@ -104,7 +97,7 @@ public class setting extends Activity {
         EditText adult_et = (EditText)findViewById(R.id.adultText);
         EditText child_et = (EditText)findViewById(R.id.child);
         EditText limit_et = (EditText)findViewById(R.id.limit);
-        EditText setting_et = (EditText)findViewById(R.id.setting);
+        //EditText setting_et = (EditText)findViewById(R.id.setting);
         EditText baby_et = (EditText)findViewById(R.id.babyText);
 
 
@@ -112,7 +105,7 @@ public class setting extends Activity {
         adult_et.setText(adult_str);
         child_et.setText(child_str);
         limit_et.setText(limit_str);
-        setting_et.setText(setting_str);
+        //setting_et.setText(setting_str);
         baby_et.setText(baby_str);
 
 
