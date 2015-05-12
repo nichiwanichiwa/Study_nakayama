@@ -50,6 +50,9 @@ public class MainActivity extends Activity {
         int karori  = pref.getInt("karori", 0);
         int okasi  = pref.getInt("okasi", 0);
 
+        String today_last = pref.getString("today","まだ入力されていません。");
+        String today_last_s = pref.getString("today_s","まだ入力されていません。");
+
 
         int sum = g + m + b + h + s + t + a + gun;
         int sum2= r + k + kan + kanpan + kan2 + reto + f + mizu + pokari + karori + okasi;
@@ -99,12 +102,16 @@ public class MainActivity extends Activity {
         EditText et2 = (EditText) findViewById(R.id.test2);
         TextView et3 = (TextView) findViewById(R.id.stock_p);
         TextView et4 = (TextView) findViewById(R.id.food_p);
+        TextView today_f  =(TextView)findViewById(R.id.food_cal);
+        TextView today_s  =(TextView)findViewById(R.id.stock_cal);
 
         //はいっちゃう
         et.setText(str);
         et2.setText(str2);
         et3.setText(str_sp);
         et4.setText(str_fp);
+        today_f.setText(today_last);
+        today_s.setText(today_last_s);
 
         //レトルトごはんの期日が迫るとダイアログを表示する
         Calendar today =Calendar.getInstance();

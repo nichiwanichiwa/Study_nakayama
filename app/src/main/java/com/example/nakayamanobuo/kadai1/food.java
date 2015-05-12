@@ -204,6 +204,12 @@ public class food extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
 
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
 
                         EditText et = (EditText) viw.findViewById(R.id.freazegohanText);
                         String str = et.getText().toString();
@@ -336,6 +342,13 @@ public class food extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
 
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
+
                         EditText et = (EditText) viw.findViewById(R.id.kandumeText);
                         String str = et.getText().toString();
 
@@ -465,6 +478,13 @@ public class food extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
 
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
+
                         EditText et = (EditText) viw.findViewById(R.id.kanmenText);
                         String str = et.getText().toString();
 
@@ -592,6 +612,13 @@ public class food extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
 
                         EditText et = (EditText) viw.findViewById(R.id.kanpanText);
                         String str = et.getText().toString();
@@ -721,6 +748,13 @@ public class food extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
 
                         EditText et = (EditText) viw.findViewById(R.id.kansyuText);
                         String str = et.getText().toString();
@@ -852,6 +886,13 @@ public class food extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
 
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
+
                         EditText et = (EditText) viw.findViewById(R.id.retorutoText);
                         String str = et.getText().toString();
                         if(str.length() <= 0){
@@ -974,6 +1015,13 @@ public class food extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
 
                         EditText et = (EditText) viw.findViewById(R.id.freazeText);
                         String str = et.getText().toString();
@@ -1104,6 +1152,13 @@ public class food extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
 
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
+
                         EditText et = (EditText) viw.findViewById(R.id.mizuText);
                         String str = et.getText().toString();
                         if(str.length() <= 0){
@@ -1232,6 +1287,13 @@ public class food extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
 
                         EditText et = (EditText) viw.findViewById(R.id.pokariText);
                         String str = et.getText().toString();
@@ -1362,6 +1424,13 @@ public class food extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
 
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
+
                         EditText et = (EditText) viw.findViewById(R.id.karoriText);
                         String str = et.getText().toString();
                         if(str.length() <= 0){
@@ -1490,6 +1559,13 @@ public class food extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
 
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
+
                         EditText et = (EditText) viw.findViewById(R.id.okasiText);
                         String str = et.getText().toString();
 
@@ -1500,9 +1576,11 @@ public class food extends Activity {
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
+
                         e.putInt("okasi",i);
                         // e.putString("ga"," ");
                         e.commit();
+
 
                         dialog.dismiss();
 

@@ -13,7 +13,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Hello World!"
         android:id="@+id/textView"
-        android:layout_marginTop="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -89,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/test"
-        android:layout_alignBottom="@+id/space"
+        android:layout_below="@+id/imageView3"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -116,5 +115,56 @@
         android:id="@+id/food_p"
         android:layout_below="@+id/test2"
         android:layout_alignEnd="@+id/test2" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:id="@+id/imageView3"
+        android:src="@drawable/graph0"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true" />
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:id="@+id/imageView4"
+        android:src="@drawable/rightgraph0"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_alignEnd="@+id/food_p" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="最終入力日は"
+        android:id="@+id/textView24"
+        android:layout_alignTop="@+id/space"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/stock_cal"
+        android:layout_below="@+id/textView24"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="最終入力日は"
+        android:id="@+id/textView26"
+        android:layout_above="@+id/stock_cal"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/food_cal"
+        android:layout_below="@+id/textView24"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

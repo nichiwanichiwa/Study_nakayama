@@ -21,6 +21,8 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 
 public class stock extends Activity {
     final String TAG = "stock";
@@ -84,6 +86,13 @@ public class stock extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                        SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
 
                         EditText et = (EditText) viw.findViewById(R.id.gasText);
                         String str = et.getText().toString();
@@ -162,6 +171,13 @@ public class stock extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
 
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
+
                         EditText et = (EditText) viw.findViewById(R.id.fireText);
                         String str = et.getText().toString();
                         if(str.length() <= 0){
@@ -236,6 +252,13 @@ public class stock extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
 
                         EditText et = (EditText) viw.findViewById(R.id.bombText);
                         String str = et.getText().toString();
@@ -312,6 +335,13 @@ public class stock extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
 
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
+
                         EditText et = (EditText) viw.findViewById(R.id.hueText);
                         String str = et.getText().toString();
                         if(str.length() <= 0){
@@ -386,6 +416,13 @@ public class stock extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
 
                         EditText et = (EditText) viw.findViewById(R.id.sitagiText);
                         String str = et.getText().toString();
@@ -537,6 +574,13 @@ public class stock extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
 
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
+
                         EditText et = (EditText) viw.findViewById(R.id.almiText);
                         String str = et.getText().toString();
                         if(str.length() <= 0){
@@ -611,6 +655,13 @@ public class stock extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
 
                         EditText et = (EditText) viw.findViewById(R.id.gunnteText);
                         String str = et.getText().toString();

@@ -8,20 +8,72 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.widget.Spinner;
 
 public class setting extends Activity {
 
+    private Spinner selectSpinner;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_setting);
         this.getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+        // Spinnerの設定
+        ArrayAdapter<CharSequence> adapter =
+                ArrayAdapter.createFromResource(this, R.array.sample_array,android.R.layout.simple_spinner_item);
+
+       /* ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        adapter.add("Sample0");
+        adapter.add("Sample1");
+        adapter.add("Sample2");
+        adapter.add("Sample3");
+        adapter.add("Sample4");*/
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        selectSpinner = (Spinner) findViewById(R.id.spinner_id);
+        selectSpinner.setAdapter(adapter);
+        selectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView parent, View view, int position, long id) {
+                Spinner spinner = (Spinner) parent;
+                String g = (Integer.toString(spinner.getSelectedItemPosition()));
+                int asd = Integer.valueOf(g).intValue();
+                switch(asd){
+                    case 0:asd = 7;break;
+                    case 1:asd = 3;break;
+                    case 2:asd = 1;break;
+                    default:break;
+                }
+                SharedPreferences setting = getSharedPreferences("setting", MODE_PRIVATE);
+                SharedPreferences.Editor setting_e = setting.edit();
+                setting_e.putInt("setting", asd);
+                setting_e.commit();
+
+                int s = setting.getInt("setting",1);
+                String setting_str = String.valueOf(s);
+                EditText setting_et = (EditText)findViewById(R.id.setting);
+                setting_et.setText(setting_str);
+
+               // showToast(Integer.toString(spinner.getSelectedItemPosition()));
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
 
         SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
         SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
