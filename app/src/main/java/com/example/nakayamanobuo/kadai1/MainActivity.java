@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,10 +20,14 @@ import java.util.Date;
 
 public class MainActivity extends Activity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences setting = getSharedPreferences("setting", MODE_PRIVATE);
+        SharedPreferences adult = getSharedPreferences("adult",MODE_PRIVATE);
+        SharedPreferences child = getSharedPreferences("child",MODE_PRIVATE);
 
         TextView tw = (TextView)findViewById(R.id.Days);
         Calendar cale = Calendar.getInstance();
@@ -45,8 +50,8 @@ public class MainActivity extends Activity {
         int kan2  = pref.getInt("kandumes", 0);
         int reto  = pref.getInt("retoruto", 0);
         int f  = pref.getInt("freaze", 0);
-        int mizu  = pref.getInt("mizu", 0);
-        int pokari  = pref.getInt("pokari", 0);
+       // int mizu  = pref.getInt("mizu", 0);
+       // int pokari  = pref.getInt("pokari", 0);
         int karori  = pref.getInt("karori", 0);
         int okasi  = pref.getInt("okasi", 0);
 
@@ -55,29 +60,84 @@ public class MainActivity extends Activity {
 
 
         int sum = g + m + b + h + s + t + a + gun;
-        int sum2= r + k + kan + kanpan + kan2 + reto + f + mizu + pokari + karori + okasi;
+        int sum2= r + k + kan + kanpan + kan2 + reto + f + karori + okasi;
         String str = "備蓄品:"+String.valueOf(sum);
         String str2 = "非常食:"+String.valueOf(sum2);
+        int hoge = setting.getInt("setting_sp",0);
+        int adult_n =adult.getInt("adult",0);
+        int child_n =child.getInt("child",0);
+        int fam = adult_n+child_n;
+        double MAX;
 
-        String str_sp;
-        switch(sum)
-        {
-            case 0 : str_sp = "備蓄は０％です。";break;
-            case 1 : str_sp = "備蓄は１０％です。";break;
-            case 2 : str_sp = "備蓄は２０％です。";break;
-            case 3 : str_sp = "備蓄は３０％です。";break;
-            case 4 : str_sp = "備蓄は４０％です。";break;
-            case 5 : str_sp = "備蓄は５０％です。";break;
-            case 6 : str_sp = "備蓄は６０％です。";break;
-            case 7 : str_sp = "備蓄は７０％です。";break;
-            case 8 : str_sp = "備蓄は８０％です。";break;
-            case 9 : str_sp = "備蓄は９０％です。";break;
-            case 10 : str_sp = "備蓄は１００％です。";break;
-            case 11 : str_sp = "備蓄は１１０％です。";break;
-            case 12 : str_sp = "備蓄は１２０％です。";break;
-            default: str_sp = "備蓄は１２０％以上です。";break;
+        String str_fp="備蓄"+hoge;
+        switch (hoge){
+            case 0:
+                double x = 7;//((sum2 - kanpan - karori) * 1) / 3;
+                str_fp="備蓄は"+x+"です。";break;
+
+            case 1:
+                double y = 3;//((sum2 - kanpan - karori) * 1) / 3;
+                str_fp="備蓄は"+y+"です。";break;
+            case 2:
+                double p;
+                double z = ((sum2 - kanpan - karori) * 1)+(kanpan+karori)*3;
+                if(z>=3*fam){ z=3*fam;}
+                MAX=((adult_n*3)+(child_n*2))*z;
+                p=-z/(MAX*50);
+
+                str_fp="備蓄は"+p+"%です。";break;
+            default:break;
+
+
+            /*switch (x) {
+                case 0:
+                    str_sp = "備蓄は０％です。";
+                    break;
+                case 1:
+                    str_sp = "備蓄は１０％です。";
+                    break;
+                case 2:
+                    str_sp = "備蓄は２０％です。";
+                    break;
+                case 3:
+                    str_sp = "備蓄は３０％です。";
+                    break;
+                case 4:
+                    str_sp = "備蓄は４０％です。";
+                    break;
+                case 5:
+                    str_sp = "備蓄は５０％です。";
+                    break;
+                case 6:
+                    str_sp = "備蓄は６０％です。";
+                    break;
+                case 7:
+                    str_sp = "備蓄は７０％です。";
+                    break;
+                case 8:
+                    str_sp = "備蓄は８０％です。";
+                    break;
+                case 9:
+                    str_sp = "備蓄は９０％です。";
+                    break;
+                case 10:
+                    str_sp = "備蓄は１００％です。";
+                    break;
+                case 11:
+                    str_sp = "備蓄は１１０％です。";
+                    break;
+                case 12:
+                    str_sp = "備蓄は１２０％です。";
+                    break;
+                default:
+                    str_sp = "備蓄は１２０％以上です。";
+                    break;
+            }*/
+
         }
-        String str_fp;
+        TextView et4 = (TextView) findViewById(R.id.food_p);
+        et4.setText(str_fp);
+        /*String str_sp;
         switch(sum2)
         {
             case 0 : str_fp = "備蓄は０％です。";break;
@@ -94,22 +154,22 @@ public class MainActivity extends Activity {
             case 11 : str_fp = "備蓄は１１０％です。";break;
             case 12 : str_fp = "備蓄は１２０％です。";break;
             default: str_fp = "備蓄は１２０％以上です。";break;
-        }
+        }*/
 
 
         //必ずView変数で生成したデータを使うこと
         EditText et = (EditText) findViewById(R.id.test);
         EditText et2 = (EditText) findViewById(R.id.test2);
         TextView et3 = (TextView) findViewById(R.id.stock_p);
-        TextView et4 = (TextView) findViewById(R.id.food_p);
+
         TextView today_f  =(TextView)findViewById(R.id.food_cal);
         TextView today_s  =(TextView)findViewById(R.id.stock_cal);
 
         //はいっちゃう
         et.setText(str);
         et2.setText(str2);
-        et3.setText(str_sp);
-        et4.setText(str_fp);
+       // et3.setText(str_sp);
+
         today_f.setText(today_last);
         today_s.setText(today_last_s);
 
