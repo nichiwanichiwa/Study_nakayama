@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
@@ -686,8 +687,418 @@ public class stock extends Activity {
             }
         });
 
-        Button btnDisp = (Button)findViewById(R.id.setting_Button);
-        btnDisp.setOnClickListener(new OnClickListener() {
+        ImageButton btnkaityu = (ImageButton) findViewById(R.id.kaityuu);
+        btnkaityu.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                //アラートダイアログの出力
+                AlertDialog.Builder alert;
+                alert = new AlertDialog.Builder(stock.this);
+                alert.setTitle("懐中電灯");
+                LayoutInflater inflater = LayoutInflater.from(stock.this);
+                final View viw;
+                viw = inflater.inflate(R.layout.activity_kaityuu, null);
+
+                //プリファレンスの生成
+                SharedPreferences pref = getSharedPreferences("Preferences", MODE_PRIVATE);
+                int i = 0;
+                i = pref.getInt("kaityuu", i);
+                String str = String.valueOf(i);
+
+                //必ずView変数で生成したデータを使うこと
+                EditText et = (EditText) viw.findViewById(R.id.kaityuutxt);
+
+                //はいっちゃう
+                et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
+
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
+
+                        EditText et = (EditText) viw.findViewById(R.id.kaityuutxt);
+                        String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+                        int i = Integer.parseInt(str);
+
+                        Editor e = prefs.edit();
+                        e.putInt("kaityuu",i);
+                        // e.putString("ga"," ");
+                        e.commit();
+
+                        dialog.dismiss();
+
+
+                    }
+                });
+
+                alert.setView(viw);
+                alert.show();
+            }
+        });
+
+        ImageButton btnkoppu = (ImageButton) findViewById(R.id.cop);
+        btnkoppu.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                //アラートダイアログの出力
+                AlertDialog.Builder alert;
+                alert = new AlertDialog.Builder(stock.this);
+                alert.setTitle("コップ");
+                LayoutInflater inflater = LayoutInflater.from(stock.this);
+                final View viw;
+                viw = inflater.inflate(R.layout.activity_koppu, null);
+
+                //プリファレンスの生成
+                SharedPreferences pref = getSharedPreferences("Preferences", MODE_PRIVATE);
+                int i = 0;
+                i = pref.getInt("koppu", i);
+                String str = String.valueOf(i);
+
+                //必ずView変数で生成したデータを使うこと
+                EditText et = (EditText) viw.findViewById(R.id.kopputxt);
+
+                //はいっちゃう
+                et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
+
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
+
+                        EditText et = (EditText) viw.findViewById(R.id.kopputxt);
+                        String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+                        int i = Integer.parseInt(str);
+
+                        Editor e = prefs.edit();
+                        e.putInt("koppu",i);
+                        // e.putString("ga"," ");
+                        e.commit();
+
+                        dialog.dismiss();
+
+
+                    }
+                });
+
+                alert.setView(viw);
+                alert.show();
+            }
+        });
+
+        ImageButton btnutuwa = (ImageButton) findViewById(R.id.utuwa);
+        btnutuwa.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                //アラートダイアログの出力
+                AlertDialog.Builder alert;
+                alert = new AlertDialog.Builder(stock.this);
+                alert.setTitle("器");
+                LayoutInflater inflater = LayoutInflater.from(stock.this);
+                final View viw;
+                viw = inflater.inflate(R.layout.activity_utuwa, null);
+
+                //プリファレンスの生成
+                SharedPreferences pref = getSharedPreferences("Preferences", MODE_PRIVATE);
+                int i = 0;
+                i = pref.getInt("utuwa", i);
+                String str = String.valueOf(i);
+
+                //必ずView変数で生成したデータを使うこと
+                EditText et = (EditText) viw.findViewById(R.id.utuwatxt);
+
+                //はいっちゃう
+                et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
+
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
+
+                        EditText et = (EditText) viw.findViewById(R.id.utuwatxt);
+                        String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+                        int i = Integer.parseInt(str);
+
+                        Editor e = prefs.edit();
+                        e.putInt("utuwa",i);
+                        // e.putString("ga"," ");
+                        e.commit();
+
+                        dialog.dismiss();
+
+
+                    }
+                });
+
+                alert.setView(viw);
+                alert.show();
+            }
+        });
+
+        ImageButton btntaoru = (ImageButton) findViewById(R.id.taoru);
+        btntaoru.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                //アラートダイアログの出力
+                AlertDialog.Builder alert;
+                alert = new AlertDialog.Builder(stock.this);
+                alert.setTitle("タオル");
+                LayoutInflater inflater = LayoutInflater.from(stock.this);
+                final View viw;
+                viw = inflater.inflate(R.layout.activity_taoru, null);
+
+                //プリファレンスの生成
+                SharedPreferences pref = getSharedPreferences("Preferences", MODE_PRIVATE);
+                int i = 0;
+                i = pref.getInt("taoru", i);
+                String str = String.valueOf(i);
+
+                //必ずView変数で生成したデータを使うこと
+                EditText et = (EditText) viw.findViewById(R.id.taorutxt);
+
+                //はいっちゃう
+                et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
+
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
+
+                        EditText et = (EditText) viw.findViewById(R.id.taorutxt);
+                        String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+                        int i = Integer.parseInt(str);
+
+                        Editor e = prefs.edit();
+                        e.putInt("taoru",i);
+                        // e.putString("ga"," ");
+                        e.commit();
+
+                        dialog.dismiss();
+
+
+                    }
+                });
+
+                alert.setView(viw);
+                alert.show();
+            }
+        });
+
+        ImageButton btnrappu = (ImageButton) findViewById(R.id.rap);
+        btnrappu.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                //アラートダイアログの出力
+                AlertDialog.Builder alert;
+                alert = new AlertDialog.Builder(stock.this);
+                alert.setTitle("ラップ");
+                LayoutInflater inflater = LayoutInflater.from(stock.this);
+                final View viw;
+                viw = inflater.inflate(R.layout.activity_rap, null);
+
+                //プリファレンスの生成
+                SharedPreferences pref = getSharedPreferences("Preferences", MODE_PRIVATE);
+                int i = 0;
+                i = pref.getInt("rap", i);
+                String str = String.valueOf(i);
+
+                //必ずView変数で生成したデータを使うこと
+                EditText et = (EditText) viw.findViewById(R.id.utuwatxt);
+
+                //はいっちゃう
+                et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
+
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        //最終入力日を保存
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today_s",today_last);
+                        etoday.commit();
+
+                        EditText et = (EditText) viw.findViewById(R.id.rap);
+                        String str = et.getText().toString();
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+                        int i = Integer.parseInt(str);
+
+                        Editor e = prefs.edit();
+                        e.putInt("rap",i);
+                        // e.putString("ga"," ");
+                        e.commit();
+
+                        dialog.dismiss();
+
+
+                    }
+                });
+
+                alert.setView(viw);
+                alert.show();
+            }
+        });
+
+        ImageView btnDisp = (ImageView)findViewById(R.id.set_button);
+        btnDisp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Sub 画面を起動
                 Intent intent = new Intent();
@@ -695,8 +1106,9 @@ public class stock extends Activity {
                 startActivity(intent);
             }
         });
-        Button btnfood = (Button)findViewById(R.id.foodButton);
-        btnfood.setOnClickListener(new OnClickListener() {
+
+        ImageView btnstk = (ImageView)findViewById(R.id.food_button);
+        btnstk.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Sub 画面を起動
                 Intent intent = new Intent();
@@ -704,8 +1116,9 @@ public class stock extends Activity {
                 startActivity(intent);
             }
         });
-        Button btnhome = (Button)findViewById(R.id.homeButton);
-        btnhome.setOnClickListener(new OnClickListener() {
+
+        ImageView btnfood = (ImageView)findViewById(R.id.home);
+        btnfood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Sub 画面を起動
                 Intent intent = new Intent();

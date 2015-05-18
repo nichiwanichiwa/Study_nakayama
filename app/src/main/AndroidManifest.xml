@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nakayamanobuo.kadai1" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -103,6 +113,85 @@
         <activity
             android:name=".okasi"
             android:label="@string/title_activity_okasi" >
+        </activity>
+        <activity
+            android:name=".konamilk"
+            android:label="@string/title_activity_konamilk" >
+        </activity>
+        <activity
+            android:name=".sitagi_c"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_sitagi_c"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".PlaybackOverlayActivity" />
+        <activity android:name=".BrowseErrorActivity" />
+        <activity
+            android:name=".kaityuu"
+            android:label="@string/title_activity_kaityuu" >
+        </activity>
+        <activity
+            android:name=".koppu"
+            android:label="@string/title_activity_koppu" >
+        </activity>
+        <activity
+            android:name=".utuwa"
+            android:label="@string/title_activity_utuwa" >
+        </activity>
+        <activity
+            android:name=".taoru"
+            android:label="@string/title_activity_taoru" >
+        </activity>
+        <activity
+            android:name=".hukuro"
+            android:label="@string/title_activity_hukuro" >
+        </activity>
+        <activity
+            android:name=".spoon"
+            android:label="@string/title_activity_spoon" >
+        </activity>
+        <activity
+            android:name=".hasi"
+            android:label="@string/title_activity_hasi" >
+        </activity>
+        <activity
+            android:name=".denti"
+            android:label="@string/title_activity_denti" >
+        </activity>
+        <activity
+            android:name=".radio"
+            android:label="@string/title_activity_radio" >
+        </activity>
+        <activity
+            android:name=".kankiri"
+            android:label="@string/title_activity_kankiri" >
+        </activity>
+        <activity
+            android:name=".mask"
+            android:label="@string/title_activity_mask" >
+        </activity>
+        <activity
+            android:name=".juudennki"
+            android:label="@string/title_activity_juudennki" >
+        </activity>
+        <activity
+            android:name=".bin"
+            android:label="@string/title_activity_bin" >
+        </activity>
+        <activity
+            android:name=".omutu"
+            android:label="@string/title_activity_omutu" >
+        </activity>
+        <activity
+            android:name=".rap"
+            android:label="@string/title_activity_rap" >
         </activity>
     </application>
 

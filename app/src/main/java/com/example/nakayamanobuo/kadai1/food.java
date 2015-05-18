@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Calendar;
 
@@ -1123,10 +1125,12 @@ public class food extends Activity {
                 //はいっちゃう
                 et.setText(str);
 
+
                 //大人子供幼児
                 SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
                 SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
                 SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+                SharedPreferences setting = getSharedPreferences("setting", MODE_PRIVATE);
 
 
                 int a = adult.getInt("adult", 0);
@@ -1145,6 +1149,28 @@ public class food extends Activity {
                 adult_et.setText(a_str);
                 child_et.setText(c_str);
                 baby_et.setText(b_str);
+                //必要数出力
+                String sum_w;
+                TextView sum_et;
+                switch(setting.getInt("setting_sp",3)){
+                    case 0:
+                        sum_w="必要な貯蓄量は"+7*(a*3+c*2+b*3)+"Lです。";
+                        sum_et =(TextView)viw.findViewById(R.id.hituyousuu);
+                        sum_et.setText(sum_w);
+                        break;
+                    case 1:
+                        sum_w="必要な貯蓄量は"+3*(a*3+c*2+b*3)+"Lです。";
+                        sum_et =(TextView)viw.findViewById(R.id.hituyousuu);
+                        sum_et.setText(sum_w);
+                        break;
+                    case 2:
+                        sum_w="必要な貯蓄量は"+1*(a*3+c*2+b*3)+"Lです。";
+                        sum_et =(TextView)viw.findViewById(R.id.hituyousuu);
+                        sum_et.setText(sum_w);
+                        break;
+                }
+
+
 
 
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -1236,13 +1262,13 @@ public class food extends Activity {
             }
         });
 
-        ImageButton btnpokari = (ImageButton) findViewById(R.id.pokari);
-        btnpokari.setOnClickListener(new View.OnClickListener() {
+        ImageButton btnrinyuu = (ImageButton) findViewById(R.id.rinyuusyoku);
+        btnrinyuu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //アラートダイアログの出力
                 AlertDialog.Builder alert;
                 alert = new AlertDialog.Builder(food.this);
-                alert.setTitle("スポーツ飲料粉末");
+                alert.setTitle("離乳食");
                 LayoutInflater inflater = LayoutInflater.from(food.this);
                 final View viw;
                 viw = inflater.inflate(R.layout.activity_pokari, null);
@@ -1250,7 +1276,7 @@ public class food extends Activity {
                 //プリファレンスの生成
                 SharedPreferences pref = getSharedPreferences("Preferences", MODE_PRIVATE);
                 int i = 0;
-                i = pref.getInt("pokari", i);
+                i = pref.getInt("rinyuu", i);
                 String str = String.valueOf(i);
 
                 //必ずView変数で生成したデータを使うこと
@@ -1305,7 +1331,7 @@ public class food extends Activity {
                         int i = Integer.parseInt(str);
 
                         SharedPreferences.Editor e = prefs.edit();
-                        e.putInt("pokari",i);
+                        e.putInt("rinyuu",i);
                         // e.putString("ga"," ");
                         e.commit();
 
@@ -1651,11 +1677,170 @@ public class food extends Activity {
         });
 
 
+        //粉ミルク
+        ImageButton btnpowmil = (ImageButton) findViewById(R.id.konamilk);
+        btnpowmil.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //アラートダイアログの出力
+                AlertDialog.Builder alert;
+                alert = new AlertDialog.Builder(food.this);
+                alert.setTitle("粉ミルク");
+                LayoutInflater inflater = LayoutInflater.from(food.this);
+                final View viw;
+                viw = inflater.inflate(R.layout.activity_konamilk, null);
+
+                //プリファレンスの生成
+                SharedPreferences pref = getSharedPreferences("Preferences", MODE_PRIVATE);
+                int i = 0;
+                i = pref.getInt("konamilk", i);
+                String str = String.valueOf(i);
+
+                //必ずView変数で生成したデータを使うこと
+                EditText et = (EditText) viw.findViewById(R.id.konaText);
+
+                //はいっちゃう
+                et.setText(str);
+
+                //大人子供幼児
+                SharedPreferences adult = getSharedPreferences("adult", MODE_PRIVATE);
+                SharedPreferences child = getSharedPreferences("child", MODE_PRIVATE);
+                SharedPreferences baby = getSharedPreferences("baby",MODE_PRIVATE);
+
+
+                int a = adult.getInt("adult", 0);
+                int c = child.getInt("child",0);
+                int b = baby.getInt("baby",0);
+
+                String a_str = "大人"+String.valueOf(a)+"人";
+                String c_str = "子供"+String.valueOf(c)+"人";
+                String b_str = "幼児"+String.valueOf(b)+"人";
+
+
+                EditText adult_et = (EditText)viw.findViewById(R.id.adult);
+                EditText child_et = (EditText)viw.findViewById(R.id.child);
+                EditText baby_et = (EditText)viw.findViewById(R.id.baby);
+
+                adult_et.setText(a_str);
+                child_et.setText(c_str);
+                baby_et.setText(b_str);
+
+
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences prefs =getSharedPreferences("Preferences",MODE_PRIVATE);
+
+                        // 最終入力日取得
+                        Calendar today =Calendar.getInstance();
+                        String today_last =today.get(Calendar.YEAR)+"年"+(today.get(Calendar.MONTH)+1)+"月"+today.get(Calendar.DATE)+"日です。";
+                        SharedPreferences.Editor etoday = prefs.edit();
+                        etoday.putString("today",today_last);
+                        etoday.commit();
+
+                        EditText et = (EditText) viw.findViewById(R.id.konaText);
+                        String str = et.getText().toString();
+
+                        if(str.length() <= 0){
+                            str = "0";
+                        }
+
+                        int i = Integer.parseInt(str);
+
+                        SharedPreferences.Editor e = prefs.edit();
+                        e.putInt("konamilk",i);
+                        // e.putString("ga"," ");
+                        e.commit();
+
+                        dialog.dismiss();
+
+
+                    }
+                });
+                //プリファレンス呼び出し
+                SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                pYear = cal.getInt("konayear",pYear);
+                pMonth = cal.getInt("konamonth",pMonth);
+                pDay = cal.getInt("konaday",pDay);
+                alert.setMessage("賞味期限は"+pYear+"年"+(pMonth+1)+"月"+pDay+"日です。");
+
+                alert.setView(viw);
+                alert.show();
+
+                ImageButton btnCal = (ImageButton)viw.findViewById(R.id.cal);
+                btnCal.setOnClickListener(new View.OnClickListener(){
+                    public  void onClick(View v) {
+
+                        //プリファレンス呼び出し
+                        SharedPreferences cal = getSharedPreferences("Prifarence", MODE_PRIVATE);
+                        pYear = cal.getInt("konayear",pYear);
+                        pMonth = cal.getInt("konamonth",pMonth);
+                        pDay = cal.getInt("konaday",pDay);
+                        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                pYear = year;
+                                pMonth = monthOfYear;
+                                pDay = dayOfMonth;
+
+                                //プリファレンスに保存
+                                SharedPreferences cal =getSharedPreferences("Prifarence",MODE_PRIVATE);
+                                SharedPreferences.Editor konayear = cal.edit();
+                                SharedPreferences.Editor konamonth = cal.edit();
+                                SharedPreferences.Editor konaday = cal.edit();
+
+                                konayear.putInt("konayear",year);
+                                konamonth.putInt("konamonth",monthOfYear);
+                                konaday.putInt("konaday",dayOfMonth);
+
+                                konayear.commit();
+                                konamonth.commit();
+                                konaday.commit();
+                            }
+                        };
+
+                        pdatepickerdialog = new DatePickerDialog(
+                                food.this,
+                                listener,
+                                pYear,
+                                pMonth,
+                                pDay
+                        );
+                        pdatepickerdialog.show();
+
+                    }
+
+                });
+            }
+        });
 
 
 
-        Button btnDisp = (Button)findViewById(R.id.home);
+
+
+
+        ImageView btnDisp = (ImageView)findViewById(R.id.set_button);
         btnDisp.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Sub 画面を起動
+                Intent intent = new Intent();
+                intent.setClassName("com.example.nakayamanobuo.kadai1","com.example.nakayamanobuo.kadai1.setting");
+                startActivity(intent);
+            }
+        });
+
+        ImageView btnstk = (ImageView)findViewById(R.id.stock_button);
+        btnstk.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Sub 画面を起動
+                Intent intent = new Intent();
+                intent.setClassName("com.example.nakayamanobuo.kadai1","com.example.nakayamanobuo.kadai1.stock");
+                startActivity(intent);
+            }
+        });
+
+        ImageView btnfood = (ImageView)findViewById(R.id.home);
+        btnfood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Sub 画面を起動
                 Intent intent = new Intent();
@@ -1664,24 +1849,6 @@ public class food extends Activity {
             }
         });
 
-        Button btnbitiku = (Button)findViewById(R.id.bichiku);
-        btnbitiku.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Sub 画面を起動
-                Intent intent = new Intent();
-                intent.setClassName("com.example.nakayamanobuo.kadai1","com.example.nakayamanobuo.kadai1.stock");
-                startActivity(intent);
-            }
-        });
-        Button btnset = (Button)findViewById(R.id.setting);
-        btnset.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Sub 画面を起動
-                Intent intent = new Intent();
-                intent.setClassName("com.example.nakayamanobuo.kadai1","com.example.nakayamanobuo.kadai1.setting");
-                startActivity(intent);
-            }
-        });
     }
 
 

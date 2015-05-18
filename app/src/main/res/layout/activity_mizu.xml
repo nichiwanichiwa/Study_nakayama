@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="個"
+        android:text="L"
         android:id="@+id/textView12"
         android:layout_alignBottom="@+id/imageView"
         android:layout_toStartOf="@+id/imageView" />
@@ -60,5 +60,15 @@
         android:src="@drawable/cal"
         android:layout_below="@+id/adult"
         android:layout_alignEnd="@+id/textView12" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/hituyousuu"
+        android:layout_below="@+id/baby"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="23dp" />
 
 </RelativeLayout>

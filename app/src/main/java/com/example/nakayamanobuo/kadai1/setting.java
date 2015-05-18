@@ -1,7 +1,6 @@
 package com.example.nakayamanobuo.kadai1;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,12 +10,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.TextView;
 
 public class setting extends Activity {
@@ -415,34 +412,32 @@ public class setting extends Activity {
 
 
 
-        Button btnDisp = (Button)findViewById(R.id.home);
-        btnDisp.setOnClickListener(new OnClickListener() {
+        ImageView btnDisp = (ImageView)findViewById(R.id.food_button);
+        btnDisp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                    // Sub 画面を起動
-                    Intent intent = new Intent();
-                    intent.setClassName("com.example.nakayamanobuo.kadai1", "com.example.nakayamanobuo.kadai1.MainActivity");
-                    startActivity(intent);
-                }
-
+                // Sub 画面を起動
+                Intent intent = new Intent();
+                intent.setClassName("com.example.nakayamanobuo.kadai1","com.example.nakayamanobuo.kadai1.food");
+                startActivity(intent);
+            }
         });
 
-        Button btnstock = (Button)findViewById(R.id.stockButton);
-        btnstock.setOnClickListener(new OnClickListener() {
+        ImageView btnstk = (ImageView)findViewById(R.id.stock_button);
+        btnstk.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-               // Sub 画面を起動
+                // Sub 画面を起動
                 Intent intent = new Intent();
                 intent.setClassName("com.example.nakayamanobuo.kadai1","com.example.nakayamanobuo.kadai1.stock");
                 startActivity(intent);
             }
         });
 
-
-        Button btnfood = (Button)findViewById(R.id.food);
-        btnfood.setOnClickListener(new OnClickListener() {
+        ImageView btnfood = (ImageView)findViewById(R.id.home);
+        btnfood.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Sub 画面を起動
                 Intent intent = new Intent();
-                intent.setClassName("com.example.nakayamanobuo.kadai1","com.example.nakayamanobuo.kadai1.food");
+                intent.setClassName("com.example.nakayamanobuo.kadai1","com.example.nakayamanobuo.kadai1.MainActivity");
                 startActivity(intent);
             }
         });

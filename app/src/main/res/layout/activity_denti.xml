@@ -4,12 +4,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.nakayamanobuo.kadai1.pokari">
+    tools:context="com.example.nakayamanobuo.kadai1.denti">
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="83dp"
+        android:layout_height="104dp"
         android:id="@+id/imageView"
-        android:src="@drawable/rinyu"
+        android:src="@drawable/denti"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
@@ -17,7 +18,7 @@
         android:inputType="number"
         android:maxLength="2"
         android:ems="2"
-        android:id="@+id/pokariText"
+        android:id="@+id/dentitxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView12"
@@ -53,12 +54,5 @@
         android:id="@+id/baby"
         android:layout_below="@+id/child"
         android:layout_alignParentStart="true" />
-    <ImageButton
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:id="@+id/cal"
-        android:src="@drawable/cal"
-        android:layout_below="@+id/adult"
-        android:layout_alignEnd="@+id/textView12" />
 
 </RelativeLayout>

@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:src="@drawable/rinyu"
+        android:src="@drawable/konamilk"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
@@ -17,7 +17,7 @@
         android:inputType="number"
         android:maxLength="2"
         android:ems="2"
-        android:id="@+id/pokariText"
+        android:id="@+id/konaText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView12"

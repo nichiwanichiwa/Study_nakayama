@@ -10,21 +10,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Hello World!"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="今日は"
         android:id="@+id/textView2"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/textView"
-        android:layout_toStartOf="@+id/textView" />
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/food_p" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,71 +22,23 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="0000年00月00日"
         android:id="@+id/Days"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_above="@+id/imageView3"
+        android:layout_toEndOf="@+id/textView2" />
+
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="です。"
-        android:id="@+id/textView3"
-        android:layout_alignBottom="@+id/Days"
-        android:layout_toEndOf="@+id/Days" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="設定"
-        android:id="@+id/set_button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ホーム"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="非常食"
-        android:id="@+id/food_button"
-        android:layout_alignTop="@+id/button"
-        android:layout_toEndOf="@+id/button" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="備蓄品"
-        android:id="@+id/stock_button"
-        android:layout_alignTop="@+id/set_button"
-        android:layout_toEndOf="@+id/food_button" />
-
-    <Space
-        android:layout_width="20px"
-        android:layout_height="20px"
-        android:layout_above="@+id/button"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginBottom="108dp"
-        android:id="@+id/space" />
-
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/test"
         android:layout_below="@+id/imageView3"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/test2"
-        android:layout_alignTop="@+id/test"
-        android:layout_alignEnd="@+id/set_button" />
+        android:layout_below="@+id/imageView3"
+        android:layout_alignEnd="@+id/stock_p" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -105,7 +47,7 @@
         android:text="Small Text"
         android:id="@+id/stock_p"
         android:layout_below="@+id/test"
-        android:layout_alignParentStart="true" />
+        android:layout_alignEnd="@+id/textView9" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -113,32 +55,23 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/food_p"
-        android:layout_below="@+id/test2"
-        android:layout_alignEnd="@+id/test2" />
+        android:layout_below="@+id/test"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:id="@+id/imageView3"
         android:src="@drawable/graph0"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true" />
+        android:layout_alignTop="@+id/hijouImage"
+        android:layout_alignParentEnd="true" />
     <ImageView
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:id="@+id/imageView4"
+        android:id="@+id/hijouImage"
         android:src="@drawable/rightgraph0"
-        android:layout_alignTop="@+id/imageView3"
-        android:layout_alignEnd="@+id/food_p" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="最終入力日は"
-        android:id="@+id/textView24"
-        android:layout_alignTop="@+id/space"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -146,8 +79,8 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/stock_cal"
-        android:layout_below="@+id/textView24"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/textView9"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -155,7 +88,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="最終入力日は"
         android:id="@+id/textView26"
-        android:layout_above="@+id/stock_cal"
+        android:layout_below="@+id/food_p"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -164,7 +97,133 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/food_cal"
-        android:layout_below="@+id/textView24"
+        android:layout_alignBottom="@+id/stock_cal"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="最終入力日は"
+        android:id="@+id/textView9"
+        android:layout_below="@+id/food_p"
         android:layout_alignParentEnd="true" />
+    >
+    <fragment
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:name="com.example.nakayamanobuo.kadai1.ButtonFragment"
+        class="com.example.nakayamanobuo.kadai1.ButtonFragment"
+        android:id="@+id/fragment"
+        tools:layout="@layout/fragment_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="☆要チェックリスト☆"
+        android:id="@+id/textView"
+        android:layout_below="@+id/stock_cal"
+        android:layout_toStartOf="@+id/textView9" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/scrollView"
+        android:background="#fffcff00"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/stock_cal"
+        android:layout_alignParentStart="true">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Small Text"
+            android:id="@+id/alart_r" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Small Text"
+                android:id="@+id/alart_k"
+                android:layout_alignBaseline="@+id/alart_kanmen"
+                android:layout_alignBottom="@+id/alart_kanmen"
+                android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Small Text"
+                android:id="@+id/alart_kanmen"
+                android:layout_alignBottom="@+id/scrollView"
+                android:layout_toEndOf="@+id/test" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Small Text"
+                android:id="@+id/alart_kanpan"
+                android:layout_alignBottom="@+id/scrollView"
+                android:layout_toEndOf="@+id/test" />
+            <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Small Text"
+            android:id="@+id/alart_k2"
+            android:layout_alignBottom="@+id/scrollView"
+            android:layout_toEndOf="@+id/test" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Small Text"
+                android:id="@+id/alart_r2"
+                android:layout_alignBottom="@+id/scrollView"
+                android:layout_toEndOf="@+id/test" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Small Text"
+                android:id="@+id/alart_f"
+                android:layout_alignBottom="@+id/scrollView"
+                android:layout_toEndOf="@+id/test" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Small Text"
+                android:id="@+id/alart_kal"
+                android:layout_alignBottom="@+id/scrollView"
+                android:layout_toEndOf="@+id/test" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Small Text"
+                android:id="@+id/alart_oka"
+                android:layout_alignBottom="@+id/scrollView"
+                android:layout_toEndOf="@+id/test" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Small Text"
+                android:id="@+id/alart_rinyuu"
+                android:layout_alignBottom="@+id/scrollView"
+                android:layout_toEndOf="@+id/test" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Small Text"
+                android:id="@+id/alart_kona"
+                android:layout_alignBottom="@+id/scrollView"
+                android:layout_toEndOf="@+id/test" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/keikoku"
+        android:layout_below="@+id/textView"
+        android:layout_toEndOf="@+id/food_cal" />
+
 
 </RelativeLayout>

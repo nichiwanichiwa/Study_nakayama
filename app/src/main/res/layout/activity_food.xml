@@ -7,154 +7,179 @@
     tools:context="com.example.nakayamanobuo.kadai1.food"
    >
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ホーム"
-        android:id="@+id/home"
+    <fragment
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:name="com.example.nakayamanobuo.kadai1.ButtonFragment"
+        class="com.example.nakayamanobuo.kadai1.ButtonFragment"
+        android:id="@+id/fragment"
+        tools:layout="@layout/fragment_button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="非常食"
-        android:id="@+id/button3"
-        android:layout_alignBottom="@+id/home"
-        android:layout_toEndOf="@+id/home" />
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_height="320dp"
+        android:layout_width="fill_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="備蓄品"
-        android:id="@+id/bichiku"
-        android:layout_alignBottom="@+id/button3"
-        android:layout_toEndOf="@+id/button3" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="設定"
-        android:id="@+id/setting"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/bichiku" />
-
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/retoruto_gohan"
-        android:src="@drawable/retoruto_gohan"
+    <GridLayout
+        android:id="@+id/LinearLayout"
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="28dp" />
+        android:layout_alignParentStart="true">
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/kandume"
-        android:src="@drawable/kandume"
-        android:layout_alignBottom="@+id/retoruto_gohan"
-        android:layout_toEndOf="@+id/home" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="食べ物"
+            android:id="@+id/textView21"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="0"
+            android:layout_column="0" />
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/kanmen"
-        android:src="@drawable/kanmen"
-        android:layout_alignTop="@+id/kandume"
-        android:layout_toStartOf="@+id/setting" />
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/kanpan"
-        android:src="@drawable/kanpan"
-        android:layout_above="@+id/textView22"
-        android:layout_alignParentEnd="true" />
+        <ImageButton
+    android:layout_width="80dp"
+    android:layout_height="90dp"
+    android:id="@+id/retoruto_gohan"
+    android:src="@drawable/retoruto_gohan"
+    android:layout_below="@+id/textView21"
+    android:layout_toStartOf="@+id/kandume"
+            android:layout_row="1"
+            android:layout_column="0" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="主食"
-        android:id="@+id/textView21"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:id="@+id/kandume"
+            android:src="@drawable/kandume"
+            android:layout_alignBottom="@+id/retoruto_gohan"
+            android:layout_toEndOf="@+id/home"
+            android:layout_row="1"
+            android:layout_column="1" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="主菜"
-        android:id="@+id/textView22"
-        android:layout_below="@+id/retoruto_gohan"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="22dp" />
+        <ImageButton
+    android:layout_width="80dp"
+    android:layout_height="90dp"
+    android:id="@+id/kanmen"
+    android:src="@drawable/kanmen"
+    android:layout_alignTop="@+id/kandume"
+    android:layout_toEndOf="@+id/kandume"
+            android:layout_row="1"
+            android:layout_column="2" />
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/kandume_syusai"
-        android:src="@drawable/kandume"
-        android:layout_below="@+id/textView22"
-        android:layout_alignParentStart="true" />
+        <ImageButton
+    android:layout_width="80dp"
+    android:layout_height="90dp"
+    android:id="@+id/kanpan"
+    android:src="@drawable/kanpan"
+    android:layout_above="@+id/okasi"
+    android:layout_toEndOf="@+id/kanmen"
+    android:layout_row="1"
+    android:layout_column="3" />
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/retoruto"
-        android:src="@drawable/retoruto"
-        android:layout_alignTop="@+id/kandume_syusai"
-        android:layout_alignStart="@+id/kandume" />
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/furizu"
-        android:src="@drawable/furizu_dorai"
-        android:layout_alignTop="@+id/retoruto"
-        android:layout_toStartOf="@+id/setting" />
+<ImageButton
+    android:layout_width="80dp"
+    android:layout_height="90dp"
+    android:id="@+id/kandume_syusai"
+    android:src="@drawable/kandume"
+    android:layout_below="@+id/retoruto_gohan"
+    android:layout_toStartOf="@+id/retoruto"
+    android:layout_row="4"
+    android:layout_column="0" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="その他"
-        android:id="@+id/textView23"
-        android:layout_below="@+id/kandume_syusai"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="24dp" />
+<ImageButton
+    android:layout_width="80dp"
+    android:layout_height="90dp"
+    android:id="@+id/retoruto"
+    android:src="@drawable/retoruto"
+    android:layout_above="@+id/rinyuusyoku"
+    android:layout_alignStart="@+id/kandume"
+    android:layout_row="4"
+    android:layout_column="1" />
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/mizu"
-        android:src="@drawable/mizu"
-        android:layout_below="@+id/textView23"
-        android:layout_alignParentStart="true" />
+<ImageButton
+    android:layout_width="80dp"
+    android:layout_height="90dp"
+    android:id="@+id/furizu"
+    android:src="@drawable/furizu_dorai"
+    android:layout_above="@+id/karori"
+    android:layout_alignStart="@+id/kanmen"
+    android:layout_row="4"
+    android:layout_column="2" />
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/pokari"
-        android:src="@drawable/pokari_hunmatu"
-        android:layout_below="@+id/textView23"
-        android:layout_alignEnd="@+id/button3" />
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/karori"
-        android:src="@drawable/karori_meito"
-        android:layout_below="@+id/textView23"
-        android:layout_toStartOf="@+id/okasi" />
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:id="@+id/karori"
+            android:src="@drawable/karori_meito"
+            android:layout_alignTop="@+id/konamilk"
+            android:layout_toEndOf="@+id/konamilk"
+            android:layout_row="4"
+            android:layout_column="3" />
 
-    <ImageButton
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:id="@+id/okasi"
-        android:src="@drawable/okasi"
-        android:layout_alignTop="@+id/karori"
-        android:layout_alignParentEnd="true" />
+        <ImageButton
+    android:layout_width="80dp"
+    android:layout_height="90dp"
+    android:id="@+id/okasi"
+    android:src="@drawable/okasi"
+    android:layout_alignTop="@+id/furizu"
+    android:layout_alignStart="@+id/kanpan"
+    android:layout_row="7"
+    android:layout_column="0" />
+
+        <ImageButton
+    android:layout_width="80dp"
+    android:layout_height="90dp"
+    android:id="@+id/rinyuusyoku"
+    android:src="@drawable/rinyu"
+    android:layout_below="@+id/kandume_syusai"
+    android:layout_alignStart="@+id/kandume_syusai"
+    android:layout_row="7"
+    android:layout_column="1" />
+
+        <ImageButton
+    android:layout_width="80dp"
+    android:layout_height="90dp"
+    android:id="@+id/konamilk"
+    android:src="@drawable/konamilk"
+    android:layout_alignTop="@+id/rinyuusyoku"
+    android:layout_toEndOf="@+id/rinyuusyoku"
+    android:layout_row="7"
+    android:layout_column="2" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="水"
+            android:id="@+id/textView23"
+            android:layout_above="@+id/mizu"
+            android:layout_alignParentStart="true"
+            android:layout_row="11"
+            android:layout_column="0" />
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            android:id="@+id/mizu"
+            android:src="@drawable/mizu"
+            android:layout_above="@+id/home"
+            android:layout_alignParentStart="true"
+            android:layout_row="12"
+            android:layout_column="0" />
+
+        <requestFocus
+            android:layout_row="1"
+            android:layout_column="13" />
+
+    </GridLayout>
+    </ScrollView>
+
 
 </RelativeLayout>

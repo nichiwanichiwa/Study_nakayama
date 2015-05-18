@@ -7,37 +7,16 @@
     tools:context="com.example.nakayamanobuo.kadai1.setting">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ホーム"
-        android:id="@+id/home"
+    <fragment
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:name="com.example.nakayamanobuo.kadai1.ButtonFragment"
+        class="com.example.nakayamanobuo.kadai1.ButtonFragment"
+        android:id="@+id/fragment"
+        tools:layout="@layout/fragment_button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="設定"
-        android:id="@+id/button5"
-        android:layout_alignBottom="@+id/home"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="非常食"
-        android:id="@+id/food"
-        android:layout_alignBottom="@+id/home"
-        android:layout_toEndOf="@+id/home" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="備蓄品"
-        android:id="@+id/stockButton"
-        android:layout_alignBottom="@+id/button5"
-        android:layout_toEndOf="@+id/food" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,8 +24,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="大人"
         android:id="@+id/textView4"
-        android:layout_marginTop="36dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/fragment"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -55,9 +33,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="小人"
         android:id="@+id/textView5"
+        android:layout_marginTop="23dp"
         android:layout_below="@+id/spinner_adult"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="35dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,7 +43,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="期日"
         android:id="@+id/textView6"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="53dp"
+        android:layout_below="@+id/spinner_child"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -94,7 +73,7 @@
         android:text="日"
         android:id="@+id/textView10"
         android:layout_above="@+id/textView19"
-        android:layout_alignStart="@+id/textView11" />
+        android:layout_toEndOf="@+id/textView17" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -102,8 +81,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="日"
         android:id="@+id/textView11"
-        android:layout_alignStart="@+id/food"
-        android:layout_alignBottom="@+id/textView7" />
+        android:layout_above="@+id/textView20"
+        android:layout_alignStart="@+id/textView10" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -111,8 +90,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="幼児"
         android:id="@+id/baby"
-        android:layout_alignTop="@+id/textView8"
-        android:layout_toEndOf="@+id/food" />
+        android:layout_alignTop="@+id/spinner_child"
+        android:layout_toEndOf="@+id/textView20" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -121,7 +100,8 @@
         android:text="人"
         android:id="@+id/textView15"
         android:layout_alignTop="@+id/spinner_b"
-        android:layout_toEndOf="@+id/stockButton" />
+        android:layout_toEndOf="@+id/textView18"
+        android:layout_marginStart="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -174,8 +154,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_id"
-        android:layout_alignTop="@+id/textView7"
-        android:layout_toEndOf="@+id/textView7" />
+        android:layout_alignTop="@+id/textView11"
+        android:layout_alignStart="@+id/spinner_child" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -211,7 +191,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_l"
-        android:layout_alignTop="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6" />
+        android:layout_alignTop="@+id/textView10"
+        android:layout_alignStart="@+id/spinner_id" />
 
 </RelativeLayout>
